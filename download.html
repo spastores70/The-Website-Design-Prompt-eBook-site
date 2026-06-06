@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Download is Ready — Sunday Creative Studio</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .download-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .download-orbs {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .download-orb-1 {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: var(--teal-400);
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.1;
+      top: -150px;
+      left: -100px;
+    }
+
+    .download-orb-2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: var(--purple-500);
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.1;
+      bottom: -100px;
+      right: -100px;
+    }
+
+    .download-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 56px 48px;
+      max-width: 560px;
+      width: 100%;
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+    }
+
+    .download-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(135deg, var(--teal-400), var(--purple-500));
+      border-radius: 28px 28px 0 0;
+    }
+
+    .success-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(45,212,191,0.12);
+      border: 2px solid rgba(45,212,191,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 2rem;
+      animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+    }
+
+    @keyframes popIn {
+      from { transform: scale(0); opacity: 0; }
+      to   { transform: scale(1); opacity: 1; }
+    }
+
+    .download-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--teal-400);
+      margin-bottom: 12px;
+    }
+
+    .download-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .download-sub {
+      font-size: 0.95rem;
+      color: var(--slate-400);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .download-book-thumb {
+      width: 120px;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+      margin: 0 auto 32px;
+      display: block;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 18px 32px;
+      border-radius: 100px;
+      background: linear-gradient(135deg, var(--teal-400), var(--purple-500));
+      color: #040d1a;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 0 32px rgba(45,212,191,0.3);
+      margin-bottom: 14px;
+    }
+
+    .download-btn:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px rgba(45,212,191,0.45);
+    }
+
+    .download-btn svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .download-note {
+      font-size: 0.78rem;
+      color: var(--slate-400);
+      margin-bottom: 36px;
+    }
+
+    .download-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.07);
+      margin: 32px 0;
+    }
+
+    .download-footer-note {
+      font-size: 0.82rem;
+      color: var(--slate-400);
+      line-height: 1.65;
+    }
+
+    .download-footer-note a {
+      color: var(--teal-400);
+      text-decoration: none;
+    }
+
+    .download-footer-note a:hover {
+      text-decoration: underline;
+    }
+
+    .page-footer {
+      position: relative;
+      z-index: 1;
+      margin-top: 40px;
+      font-size: 0.78rem;
+      color: var(--slate-400);
+    }
+
+    @media (max-width: 600px) {
+      .download-card { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="download-page">
+    <div class="download-orbs">
+      <div class="download-orb-1"></div>
+      <div class="download-orb-2"></div>
+    </div>
+
+    <div class="download-card">
+      <div class="success-icon">✓</div>
+      <div class="download-eyebrow">Payment Confirmed</div>
+      <h1 class="download-title">Your eBook is Ready!</h1>
+      <p class="download-sub">
+        Thank you for your purchase. Click the button below to download your copy of the
+        <strong style="color:#fff;">Website Design Prompt eBook</strong>.
+      </p>
+
+      <img src="ebook-cover.png" alt="Website Design Prompt eBook" class="download-book-thumb" />
+
+      <a href="downloads/Website_Design_Prompt_eBook.docx" download="Website_Design_Prompt_eBook.docx" class="download-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        Download Your eBook
+      </a>
+      <p class="download-note">DOCX file · Opens in Microsoft Word or Google Docs</p>
+
+      <div class="download-divider"></div>
+
+      <p class="download-footer-note">
+        A receipt has been sent to your email.<br />
+        Questions? Contact us at <a href="mailto:spastores70@gmail.com">spastores70@gmail.com</a>
+      </p>
+    </div>
+
+    <p class="page-footer">© 2026 Sunday Creative Studio</p>
+  </div>
+</body>
+</html>
